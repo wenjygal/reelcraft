@@ -18,6 +18,12 @@ makes the `staticFile()` calls inside the templates resolve against this run's
 `media/` folder (assets copied there in step 3) instead of the renderer's own
 `public/`.
 
+If `renderer/.remotion-binaries/` exists, also add
+`--binaries-directory="<absolute path to renderer>/.remotion-binaries"` — see
+"Troubleshooting" below for what that folder is and when it's needed. If it
+doesn't exist, omit the flag entirely (do not point it at a folder that isn't
+there).
+
 Move/copy the rendered file to `<output folder>/reelcraft.mp4`.
 
 ## 2. Poster frame
@@ -35,6 +41,16 @@ Write `share-copy.txt` using the "Share copy draft" line from `reelcraft-plan.md
 adapted into two short variants: one for X/Twitter (casual, under 280 chars), one
 for LinkedIn (one sentence more context, still short). Training mode does not
 produce this file.
+
+## Troubleshooting: FFmpeg exit code ~3236495362 on Windows
+
+If `remotion render` fails with that exit code and Event Viewer's
+`Microsoft-Windows-CodeIntegrity/Operational` log shows an `avfilter-10.dll`
+signing-requirements event, Windows Smart App Control is blocking Remotion's
+bundled ffmpeg. Run `renderer/scripts/setup-local-binaries.ps1` once (see that
+file for details) — `remotion.config.ts` then uses the resulting
+`.remotion-binaries/` folder automatically. Do not disable Smart App Control;
+it's a one-way OS setting.
 
 ## 4. Sanity check before reporting done
 

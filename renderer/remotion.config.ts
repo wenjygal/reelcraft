@@ -8,6 +8,13 @@
 import { Config } from "@remotion/cli/config";
 import { enableTailwind } from "@remotion/tailwind-v4";
 
+// Note: Config.setBinariesDirectory() exists but its module-level state didn't
+// reliably survive into the actual render step in testing here — pass
+// --binaries-directory=.remotion-binaries explicitly on the render command
+// instead (see package.json's render:* scripts and step-4-deliver.md). Only
+// needed at all if Windows Smart App Control blocks Remotion's bundled ffmpeg —
+// see renderer/scripts/setup-local-binaries.ps1.
+
 Config.setRspack(true);
 Config.setVideoImageFormat("jpeg");
 Config.setOverwriteOutput(true);

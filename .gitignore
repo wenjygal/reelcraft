@@ -1,6 +1,7 @@
 node_modules/
 renderer/dist/
 renderer/out/
+renderer/.remotion-binaries/
 reelcraft-output*/
 *.log
 .DS_Store
