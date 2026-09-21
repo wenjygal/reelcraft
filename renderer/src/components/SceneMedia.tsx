@@ -6,24 +6,32 @@ type Props = {
   backgroundColor: string;
 };
 
-// Renders a scene's screenshot/media reference if one was provided, otherwise
-// just the theme background — keeps scenes usable even before step 3 has real
-// screenshots wired in.
+// Renders a scene's screenshot as a framed card (rounded corners, shadow, ~78%
+// width) floating on the theme background — a raw full-bleed screenshot filling
+// the entire frame reads as "someone forgot to design this"; a framed card
+// reads as an intentional product shot. Leaves the bottom ~18% clear for
+// Caption (see MarketingReel/TrainingReel, which switch caption position to
+// leave room here rather than overlaying text on the image itself).
 export const SceneMedia: React.FC<Props> = ({ mediaRef, backgroundColor }) => (
   <AbsoluteFill style={{ backgroundColor }}>
     {mediaRef ? (
-      <>
+      <div
+        style={{
+          position: "absolute",
+          left: "11%",
+          right: "11%",
+          top: "10%",
+          bottom: "24%",
+          borderRadius: 40,
+          overflow: "hidden",
+          boxShadow: "0 30px 60px rgba(0,0,0,0.25)",
+        }}
+      >
         <Img
           src={staticFile(mediaRef)}
-          style={{ width: "100%", height: "100%", objectFit: "cover" }}
+          style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "top" }}
         />
-        {/* Legibility scrim for lower-third captions over a busy screenshot. */}
-        <AbsoluteFill
-          style={{
-            background: "linear-gradient(to top, rgba(0,0,0,0.55), rgba(0,0,0,0) 35%)",
-          }}
-        />
-      </>
+      </div>
     ) : null}
   </AbsoluteFill>
 );

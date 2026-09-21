@@ -44,7 +44,6 @@ export const MarketingReel: React.FC<MarketingConfig> = ({ theme, audio, scenes 
                   theme={theme}
                   position={scene.mediaRef ? "lower-third" : "center"}
                   size={scene.kind === "hook" || scene.kind === "punchline" ? "hero" : "body"}
-                  overMedia={Boolean(scene.mediaRef)}
                 />
               </div>
 
