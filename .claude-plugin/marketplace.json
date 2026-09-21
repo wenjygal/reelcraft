@@ -1,0 +1,14 @@
+{
+  "name": "reelcraft",
+  "description": "Turn the current project into a short video — a marketing launch reel or a training walkthrough — with one command, rendered through Remotion.",
+  "owner": {
+    "name": "Gal Efrati"
+  },
+  "plugins": [
+    {
+      "name": "reelcraft",
+      "source": "./",
+      "description": "Turn the current project into a marketing or training video using Remotion and free/royalty-free assets."
+    }
+  ]
+}

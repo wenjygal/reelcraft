@@ -1,0 +1,8 @@
+node_modules/
+renderer/dist/
+renderer/out/
+reelcraft-output*/
+*.log
+.DS_Store
+.env
+.env.local

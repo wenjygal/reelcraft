@@ -1,0 +1,12 @@
+{
+  "name": "reelcraft",
+  "description": "Turn the current project into a marketing or training video using Remotion.",
+  "version": "0.1.0",
+  "author": {
+    "name": "Gal Efrati"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/wenjygal/reelcraft",
+  "repository": "https://github.com/wenjygal/reelcraft",
+  "keywords": ["video", "remotion", "training", "marketing", "skill"]
+}
