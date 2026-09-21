@@ -6,6 +6,18 @@ file is consumed directly by the matching Remotion composition
 not generate or edit any `.tsx` file per run. The two templates already exist and
 are generic; your only job here is to fill in this config correctly.
 
+## Crop screenshots tight before referencing them
+
+A raw full-viewport screenshot of a mobile web app is mostly dead background —
+content usually clusters in one area, not the whole capture. `SceneMedia`
+renders each screenshot at its own natural size (no forced aspect ratio), so a
+loose screenshot just shows as a card that's mostly empty. Before copying a
+screenshot into `media/screenshots/`, crop it to its actual content bounding
+box (plus a little padding) — if the meaningful UI spans two separate regions
+with a large empty gap between them (e.g. a header and a footer with dead
+space in between), crop and stack those regions into one tighter composite
+instead of shipping the gap.
+
 ## Media paths are relative to `<output folder>/media/`
 
 Copy every asset the config references — the chosen music track, any SFX cues,
