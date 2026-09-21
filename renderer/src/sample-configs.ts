@@ -3,19 +3,48 @@
 // always pass their own composition-config.json via `--props`.
 import type { MarketingConfig, TrainingConfig } from "./types";
 
+// Real dogfood run against hamal4kids/my-smart-pack (2026-09-21) — screenshots
+// copied into public/screenshots/. Kept as the Studio default because a real
+// example is a better sanity check than a placeholder ("You built it, now
+// brag") that never shows whether real screenshots actually read well.
 export const sampleMarketingConfig: MarketingConfig = {
   mode: "marketing",
-  title: "reelcraft sample",
+  title: "חמ״ל תיקתק",
   format: "vertical",
   fps: 30,
-  durationInFrames: 30 * 20,
-  theme: { primaryColor: "#111111", backgroundColor: "#ffcc00", fontFamily: "Rubik", rtl: false },
+  durationInFrames: 600,
+  theme: { primaryColor: "#A1499A", backgroundColor: "#D3E9E9", fontFamily: "Rubik", rtl: true },
   audio: { musicTrack: null, musicVolume: 0.3, sfxEnabled: false, voiceover: null },
   scenes: [
-    { id: "hook", kind: "hook", durationInFrames: 60, text: "You built it." },
-    { id: "reveal", kind: "reveal", durationInFrames: 90, text: "Now brag — with Remotion." },
-    { id: "highlight-1", kind: "highlight", durationInFrames: 150, text: "Two modes. One command." },
-    { id: "punchline", kind: "punchline", durationInFrames: 60, text: "/reelcraft" },
+    { id: "hook", kind: "hook", durationInFrames: 75, text: "כל ערב אותו בלגן?" },
+    {
+      id: "reveal",
+      kind: "reveal",
+      durationInFrames: 90,
+      text: "חמ״ל תיקתק — מסדרים תיק לפי מערכת שעות",
+      mediaRef: "screenshots/home-clean.png",
+    },
+    {
+      id: "highlight-1",
+      kind: "highlight",
+      durationInFrames: 150,
+      text: "כל ערב, בדיוק מה שצריך למחר",
+      mediaRef: "screenshots/home-configured-clean.png",
+    },
+    {
+      id: "highlight-2",
+      kind: "highlight",
+      durationInFrames: 150,
+      text: "צ'קליסט מדויק לכל פריט בתיק",
+      mediaRef: "screenshots/checklist-clean.png",
+    },
+    {
+      id: "punchline",
+      kind: "punchline",
+      durationInFrames: 135,
+      text: "תיק מוכן. מדבקה ברשימה 🎉",
+      mediaRef: "screenshots/reward-clean.png",
+    },
   ],
 };
 

@@ -12,10 +12,18 @@ type Props = {
 export const SceneMedia: React.FC<Props> = ({ mediaRef, backgroundColor }) => (
   <AbsoluteFill style={{ backgroundColor }}>
     {mediaRef ? (
-      <Img
-        src={staticFile(mediaRef)}
-        style={{ width: "100%", height: "100%", objectFit: "cover" }}
-      />
+      <>
+        <Img
+          src={staticFile(mediaRef)}
+          style={{ width: "100%", height: "100%", objectFit: "cover" }}
+        />
+        {/* Legibility scrim for lower-third captions over a busy screenshot. */}
+        <AbsoluteFill
+          style={{
+            background: "linear-gradient(to top, rgba(0,0,0,0.55), rgba(0,0,0,0) 35%)",
+          }}
+        />
+      </>
     ) : null}
   </AbsoluteFill>
 );
