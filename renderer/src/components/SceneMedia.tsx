@@ -22,8 +22,8 @@ export const SceneMedia: React.FC<Props> = ({ mediaRef, backgroundColor }) => (
         style={{
           position: "absolute",
           left: "50%",
-          top: "6%",
-          width: "58%",
+          top: "5%",
+          width: "80%",
           // Matches the actual screenshot dimensions (1080x1920 captures,
           // cropped to 1080x1860 to remove a "Made with Lovable" badge) —
           // not a generic 9:16 guess, so objectFit: cover below never has to
